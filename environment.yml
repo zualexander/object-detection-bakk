@@ -1,0 +1,27 @@
+name: ml-bakk
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - numpy
+  - matplotlib
+  - pandas
+  - scikit-learn
+  - seaborn
+  - jupyter
+  - scipy
+  - h5py
+  - tensorflow=2
+  - keras
+  - pillow
+  - librosa
+  - nltk
+  - openpyxl
+  - xlrd
+  - hiplot
+  - hyperopt
+  - lxml
+  - pip:
+    - opencv-python
+    - tensorflow-gpu
