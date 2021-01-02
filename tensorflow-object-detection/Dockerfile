@@ -7,6 +7,7 @@ RUN apt-get install -y --no-install-recommends \
 	curl \
 	git \
 	less \
+	unzip \
 	zip && \
 	rm -rf /var/lib/apt/lists/*
 
@@ -14,13 +15,13 @@ RUN apt-get install -y --no-install-recommends \
 # Installing `object_detection` attempts to install the 'tensorflow' package.
 # Name the symlink with the suffix from tf_nightly_gpu.
 WORKDIR /usr/local/lib/python3.6/dist-packages
-RUN ln -s tf_nightly_gpu-* tensorflow-$(ls -d1 tf_nightly_gpu* | sed 's/tf_nightly_gpu-\(.*\)/\1/')
+#RUN ln -s tf_nightly_gpu-* tensorflow-$(ls -d1 tf_nightly_gpu* | sed 's/tf_nightly_gpu-\(.*\)/\1/')
 
 WORKDIR /tf
-RUN curl -L -O https://github.com/protocolbuffers/protobuf/releases/download/v3.11.4/protoc-3.11.4-linux-x86_64.zip && \
-	unzip protoc-3.11.4-linux-x86_64.zip && \
+RUN curl -L -O https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip && \
+	unzip protoc-3.14.0-linux-x86_64.zip && \
 	cp bin/protoc /usr/local/bin && \
-	rm -r protoc-3.11.4-linux-x86_64.zip bin/
+	rm -r protoc-3.14.0-linux-x86_64.zip bin/
 
 # Upgrade pip.
 RUN python -m pip install --no-cache-dir --upgrade pip
