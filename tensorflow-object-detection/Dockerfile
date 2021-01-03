@@ -1,8 +1,12 @@
 FROM tensorflow/tensorflow:nightly-jupyter
+#FROM jupyter/tensorflow-notebook
 
-RUN python -c "import tensorflow as tf; print(f'Tensorflow version: {tf.__version__}')"
 
-RUN apt-get install -y --no-install-recommends \
+#RUN python -c "import tensorflow as tf; print(f'Tensorflow version: {tf.__version__}')"
+USER root
+
+RUN apt-get update &&\
+	apt-get install -y --no-install-recommends \
 	ca-certificates \
 	curl \
 	git \
@@ -14,7 +18,7 @@ RUN apt-get install -y --no-install-recommends \
 # Trick pip into thinking that the 'tensorflow' package is installed.
 # Installing `object_detection` attempts to install the 'tensorflow' package.
 # Name the symlink with the suffix from tf_nightly_gpu.
-WORKDIR /usr/local/lib/python3.6/dist-packages
+#WORKDIR /usr/local/lib/python3.6/dist-packages
 #RUN ln -s tf_nightly_gpu-* tensorflow-$(ls -d1 tf_nightly_gpu* | sed 's/tf_nightly_gpu-\(.*\)/\1/')
 
 WORKDIR /tf
@@ -25,11 +29,11 @@ RUN curl -L -O https://github.com/protocolbuffers/protobuf/releases/download/v3.
 
 # Upgrade pip.
 RUN python -m pip install --no-cache-dir --upgrade pip
-
 RUN git clone --depth 1 https://github.com/tensorflow/models
 WORKDIR models/research
 RUN protoc object_detection/protos/*.proto --python_out=. && \
 	cp object_detection/packages/tf2/setup.py . && \
 	python -m pip install  --no-cache-dir .
-
 RUN python -c "import tensorflow as tf; print(f'Tensorflow version: {tf.__version__}')"
+
+RUN chmod -R 777 /tf/models/
