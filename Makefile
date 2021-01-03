@@ -15,6 +15,7 @@ build-tf:
 run-tf:
 	docker run \
 	-p 8888:8888 \
+	-v $(ABSOLUTE_DIR_PATH)$(VOLUME_TEST_IMAGES_DIR):/main$(VOLUME_TEST_IMAGES_DIR) \
 	$(DOCKER_IMAGE_NAME_TF) \
 
 
@@ -37,12 +38,3 @@ run-yolo:
 	--user root \
 	$(DOCKER_IMAGE_NAME_YOLO) \
 	start.sh
-
-run-yolo2:
-	docker run \
-	-p 8888:8888 \
-	-e GRANT_SUDO=yes \
-	-v $(ABSOLUTE_DIR_PATH)$(VOLUME_TEST_IMAGES_DIR):/main$(VOLUME_TEST_IMAGES_DIR) \
-	$(DOCKER_IMAGE_NAME_YOLO) \
-	start-notebook.sh \
-	--NotebookApp.allow_root=True \
