@@ -16,7 +16,7 @@
 TBD - should start jupyter notebook with two notebooks which also does recognition in a different folder in the directory
 
 ## yolo9000
-* switch into `tensorflow-object-detection` directory 
+* switch into `yolo9000-object-detection` directory 
 ### with maven
 * execute `mvn build-yolo` for building the image, and from then on use 
 * `mvn run-yolo` to run the container
@@ -24,7 +24,7 @@ TBD - should start jupyter notebook with two notebooks which also does recogniti
 * see the commands in the makefile and replace the variable with a manual given name in the command line
 
 ### what it does
-it runs a script for every image in the directory `./test-images/images` and puts the results in `./test-images/results`
+it runs a script for every image in the directory `./test-images/images` and puts the results in `./test-images/results/yolo-9000`
 
 
 
