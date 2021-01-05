@@ -7,10 +7,24 @@
 ## setup tensorflow object detection-api
 * switch into `tensorflow-object-detection` directory 
 ### with maven
-* execute `mvn build` for building the image, and from then on use 
-* `mvn run` to run the container
+* execute `mvn build-tf` for building the image, and from then on use 
+* `mvn run-tf` to run the container
 ### without maven
 * see the commands in the makefile and replace the variable with a manual given name in the command line
+
+### what it does
+TBD - should start jupyter notebook with two notebooks which also does recognition in a different folder in the directory
+
+## yolo9000
+* switch into `tensorflow-object-detection` directory 
+### with maven
+* execute `mvn build-yolo` for building the image, and from then on use 
+* `mvn run-yolo` to run the container
+### without maven
+* see the commands in the makefile and replace the variable with a manual given name in the command line
+
+### what it does
+it runs a script for every image in the directory `./test-images/images` and puts the results in `./test-images/results`
 
 
 
