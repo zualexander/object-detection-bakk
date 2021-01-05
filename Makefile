@@ -30,7 +30,7 @@ ru2n-tf:
 build-yolo:
 	docker build -t $(DOCKER_IMAGE_NAME_YOLO) ./yolo9000-object-detection/
 
-run-yolo:
+run-yolo-interactive:
 	docker run \
 	-v $(ABSOLUTE_DIR_PATH)$(VOLUME_TEST_IMAGES_DIR):/main$(VOLUME_TEST_IMAGES_DIR) \
 	-it \
@@ -38,3 +38,10 @@ run-yolo:
 	--user root \
 	$(DOCKER_IMAGE_NAME_YOLO) \
 	start.sh
+
+run-yolo:
+	docker run \
+		-v $(ABSOLUTE_DIR_PATH)$(VOLUME_TEST_IMAGES_DIR):/main$(VOLUME_TEST_IMAGES_DIR) \
+		-e GRANT_SUDO=yes \
+		--user root \
+		$(DOCKER_IMAGE_NAME_YOLO) \

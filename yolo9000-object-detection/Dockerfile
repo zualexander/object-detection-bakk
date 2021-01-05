@@ -23,8 +23,4 @@ cat yolo9000-weights/x* > yolo9000-weights/yolo9000.weights
 RUN cd yolo-9000/darknet && \
 make
 
-CMD [ "predict.sh" ]
-
-
-
-#sed -i s/CUDNN=0/CUDNN=1/g ./darknet/Makefile
+CMD [ "./predict.sh" ]
