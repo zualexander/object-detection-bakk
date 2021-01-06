@@ -5,6 +5,7 @@ USER root
 
 # Install apt dependencies
 RUN apt-get update && apt-get install -y \
+	apt-utils \
 	git \
 	lsb-release \
 	gpg-agent \
@@ -16,11 +17,11 @@ RUN apt-get update && apt-get install -y \
 	ca-certificates \
 	curl \
 	git \
-#	ssh \
 	less \
 	unzip \
 	wget \
 	zip && \
+	python -m pip install pathlib pycocotools && \
 	/usr/local/bin/python -m pip install --upgrade pip && \
 	rm -rf /var/lib/apt/lists/*
 

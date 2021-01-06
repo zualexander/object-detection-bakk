@@ -19,15 +19,6 @@ run-tf:
 	-v $(ABSOLUTE_DIR_PATH)/tensorflow-object-detection/notebooks:/tf/notebooks \
 	$(DOCKER_IMAGE_NAME_TF) \
 
-
-ru2n-tf:
-	docker run \
-	-p 8888:8888 \
-	-e GRANT_SUDO=yes \
-	$(DOCKER_IMAGE_NAME_TF) \
-	start-notebook.sh \
-	--NotebookApp.allow_root=True
-
 build-yolo:
 	docker build -t $(DOCKER_IMAGE_NAME_YOLO) ./yolo9000-object-detection/
 
