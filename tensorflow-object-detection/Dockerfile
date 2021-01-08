@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.2.0-jupyter
+FROM tensorflow/tensorflow:latest-jupyter
 
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
@@ -49,8 +49,11 @@ WORKDIR /tf/models/research/
 RUN cp object_detection/packages/tf2/setup.py ./
 ENV PATH="/home/tensorflow/.local/bin:${PATH}"
 
+RUN export PYTHONPATH=$PYTHONPATH:/tf/models/
+
 RUN python -m pip install -U pip
 RUN python -m pip install .
+RUN pip3 install --user -r /tf/models/official/requirements.txt
 
 ENV TF_CPP_MIN_LOG_LEVEL 3
 

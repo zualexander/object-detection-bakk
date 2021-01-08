@@ -31,3 +31,9 @@ it runs a script for every image in the directory `./test-images/images` and put
 # urls for other/different approaches:
  * [tensorflow object detection with tensorflow2 in docker](https://github.com/TannerGilbert/Tensorflow-Object-Detection-with-Tensorflow-2.0)
  * [tensorflow object detection models](https://github.com/tensorflow/models)
+
+
+* trouble shooting object detection example:
+https://github.com/tensorflow/models/issues/9236
+https://github.com/tensorflow/models/pull/9430/files
+https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects
