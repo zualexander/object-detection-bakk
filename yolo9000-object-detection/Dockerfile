@@ -3,12 +3,6 @@ FROM jupyter/scipy-notebook
 USER root
 WORKDIR /main
 
-# copy automated prediction script
-COPY predict.sh /main/
-RUN chmod -R 777 ./
-RUN chmod +x predict.sh
-
-
 # install dependencies
 RUN apt-get update &&\
 	apt-get install -y --no-install-recommends \
@@ -32,5 +26,10 @@ RUN wget https://raw.githubusercontent.com/AlexeyAB/darknet/master/build/darknet
 RUN wget https://raw.githubusercontent.com/AlexeyAB/darknet/master/build/darknet/x64/data/inet9k.map
 
 WORKDIR /main
+
+# copy automated prediction script
+COPY predict.sh /main/
+RUN chmod -R 777 ./
+RUN chmod +x predict.sh
 
 CMD [ "./predict.sh" ]
