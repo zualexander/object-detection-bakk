@@ -9,6 +9,9 @@ build:
 run:
 	make run-tf && make run-yolo
 
+rf-y:
+	make build-yolo && make run-yolo-interactive
+
 build-tf:
 	docker build -t $(DOCKER_IMAGE_NAME_TF) ./tensorflow-object-detection/
 
