@@ -1,10 +1,11 @@
-FROM tensorflow/tensorflow:2.2.0-jupyter
+FROM tensorflow/tensorflow:latest-jupyter
 
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
 
 # Install apt dependencies
 RUN apt-get update && apt-get install -y \
+	apt-utils \
 	git \
 	lsb-release \
 	gpg-agent \
@@ -16,11 +17,11 @@ RUN apt-get update && apt-get install -y \
 	ca-certificates \
 	curl \
 	git \
-#	ssh \
 	less \
 	unzip \
 	wget \
 	zip && \
+	python -m pip install pathlib pycocotools && \
 	/usr/local/bin/python -m pip install --upgrade pip && \
 	rm -rf /var/lib/apt/lists/*
 
@@ -48,8 +49,11 @@ WORKDIR /tf/models/research/
 RUN cp object_detection/packages/tf2/setup.py ./
 ENV PATH="/home/tensorflow/.local/bin:${PATH}"
 
+RUN export PYTHONPATH=$PYTHONPATH:/tf/models/
+
 RUN python -m pip install -U pip
 RUN python -m pip install .
+RUN pip3 install --user -r /tf/models/official/requirements.txt
 
 ENV TF_CPP_MIN_LOG_LEVEL 3
 
