@@ -2,6 +2,7 @@ FROM tensorflow/tensorflow:latest-jupyter
 
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
+WORKDIR /tf
 
 # Install apt dependencies
 RUN apt-get update && apt-get install -y \
@@ -34,17 +35,17 @@ RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
 	curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
 	apt-get update -y && apt-get install google-cloud-sdk -y
 
-# Add new user to avoid running as root
-WORKDIR /tf
-
-RUN git clone https://github.com/tensorflow/models.git
 
 # copy model folder to this folder
+RUN git clone https://github.com/tensorflow/models.git
+
 
 # Compile protobuf configs
 
 RUN (cd /tf/models/research/ && protoc object_detection/protos/*.proto --python_out=.)
 WORKDIR /tf/models/research/
+
+COPY ./notebooks/object_detection_tutorial.ipynb object_detection/colab_tutorials/
 
 RUN cp object_detection/packages/tf2/setup.py ./
 ENV PATH="/home/tensorflow/.local/bin:${PATH}"

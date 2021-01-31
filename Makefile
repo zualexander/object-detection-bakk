@@ -18,8 +18,8 @@ build-tf:
 run-tf:
 	docker run \
 	-p 8888:8888 \
-	-v $(ABSOLUTE_DIR_PATH)$(VOLUME_TEST_IMAGES_DIR):/main$(VOLUME_TEST_IMAGES_DIR) \
-	-v $(ABSOLUTE_DIR_PATH)/tensorflow-object-detection/notebooks:/tf/notebooks \
+	-v $(ABSOLUTE_DIR_PATH)$(VOLUME_TEST_IMAGES_DIR):/tf/$(VOLUME_TEST_IMAGES_DIR) \
+	-v $(ABSOLUTE_DIR_PATH)/tensorflow-object-detection/notebooks/:/tf/notebooks \
 	$(DOCKER_IMAGE_NAME_TF) \
 
 run-tf-i:
@@ -27,7 +27,7 @@ run-tf-i:
 	-p 8888:8888 \
 	-it \
 	-v $(ABSOLUTE_DIR_PATH)$(VOLUME_TEST_IMAGES_DIR):/main$(VOLUME_TEST_IMAGES_DIR) \
-	-v $(ABSOLUTE_DIR_PATH)/tensorflow-object-detection/notebooks:/tf/notebooks \
+	-v $(ABSOLUTE_DIR_PATH)/tensorflow-object-detection/notebooks/:/tf/notebooks \
 	$(DOCKER_IMAGE_NAME_TF) \
 	sh
 
