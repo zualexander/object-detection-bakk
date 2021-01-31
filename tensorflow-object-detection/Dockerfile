@@ -58,4 +58,13 @@ RUN pip3 install --user -r /tf/models/official/requirements.txt
 
 ENV TF_CPP_MIN_LOG_LEVEL 3
 
+WORKDIR /models
+RUN wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz && \
+tar xf ssd_mobilenet_v1_coco_2017_11_17.tar.gz
+
+
+# maybe not necessary
+WORKDIR /tf/notebooks
+
+
 

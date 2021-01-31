@@ -1,2 +1,6 @@
 .DS_Store
 /test-images/results
+
+/tensorflow-object-detection/notebooks/.idea/
+/tensorflow-object-detection/.DS_Store
+tensorflow-object-detection/notebooks/__pycache__/
