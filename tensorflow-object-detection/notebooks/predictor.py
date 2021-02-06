@@ -3,6 +3,7 @@ import tensorflow as tf
 from PIL import Image
 from object_detection.utils import label_map_util
 from object_detection.utils import ops as utils_ops
+from data import Data
 
 # patch tf1 into `utils.ops`
 utils_ops.tf = tf.compat.v1
@@ -72,17 +73,20 @@ class Predictor:
 
     @staticmethod
     def map_data(output_dict):
-        # print(output_dict)
         detection_boxes = output_dict['detection_boxes']
         detection_classes = output_dict['detection_classes']
         detection_scores = output_dict['detection_scores']
-
-        mapped = map(
-            lambda box, pred_class, score: {"class_id": pred_class, "confidence": score, "relative_coordinates": {
-                "center_x": box[0],
-                "center_y": box[1],
-                "width": box[2],
-                "height": box[3]
-            }},
-            detection_boxes, detection_classes, detection_scores)
-        return mapped
+        return Data(list(map(
+            lambda box, pred_class, score: {
+                "class_id": pred_class,
+                "confidence": score,
+                "relative_coordinates": {
+                    "center_x": box[0],
+                    "center_y": box[1],
+                    "width": box[2],
+                    "height": box[3]
+                }
+            },
+            detection_boxes,
+            detection_classes,
+            detection_scores)))
