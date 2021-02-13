@@ -67,8 +67,7 @@ class Predictor:
         # Actual detection.
         output_dict = self.run_inference_for_single_image(self.model, image_np)
         # Visualization of the results of a detection.
-        mapped_data = {"filename": image_path, "objects": self.map_data(output_dict)}
-        return mapped_data
+        return {"filename": image_path, "objects": Predictor.map_data(output_dict)}
 
     @staticmethod
     def map_data(output_dict):

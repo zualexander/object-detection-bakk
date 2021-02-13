@@ -1,5 +1,5 @@
-FROM tensorflow/tensorflow:latest-jupyter
-
+#FROM tensorflow/tensorflow:latest-jupyter
+FROM tensorflow/tensorflow:latest
 ARG DEBIAN_FRONTEND=noninteractive
 USER root
 WORKDIR /tf
@@ -45,8 +45,6 @@ RUN git clone https://github.com/tensorflow/models.git
 RUN (cd /tf/models/research/ && protoc object_detection/protos/*.proto --python_out=.)
 WORKDIR /tf/models/research/
 
-COPY ./notebooks/object_detection_tutorial.ipynb object_detection/colab_tutorials/
-
 RUN cp object_detection/packages/tf2/setup.py ./
 ENV PATH="/home/tensorflow/.local/bin:${PATH}"
 
@@ -60,7 +58,7 @@ ENV TF_CPP_MIN_LOG_LEVEL 3
 
 WORKDIR /models
 RUN wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz && \
-tar xf ssd_mobilenet_v1_coco_2017_11_17.tar.gz
+	tar xf ssd_mobilenet_v1_coco_2017_11_17.tar.gz
 
 RUN wget http://download.tensorflow.org/models/object_detection/mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28.tar.gz && \
 	tar xf mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28.tar.gz
@@ -68,6 +66,7 @@ RUN wget http://download.tensorflow.org/models/object_detection/mask_rcnn_incept
 
 # maybe not necessary
 WORKDIR /tf/notebooks
+ENTRYPOINT [ "python", "main.py" ]
 
 
 

@@ -21,7 +21,7 @@ class MyEncoder(JSONEncoder):
 class Persist:
     def __init__(self, file_path):
         self.file_path = file_path
-        self.empty_file(file_path)
+        Persist.empty_file(file_path)
 
     def append_to_json(self, data):
         with open(self.file_path, 'a', encoding='utf-8') as f:

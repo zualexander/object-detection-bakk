@@ -10,4 +10,4 @@ done
 
 sudo ./darknet detector test \
 	cfg/combine9k.data cfg/yolo9000.cfg yolo9000.weights \
-	-ext_output -dont_show -out /main/test-images/results/yolo-9000/results.json < data/train.txt
+	-ext_output -dont_show -out /main/test-images/results/yolo-9000.json < data/train.txt
