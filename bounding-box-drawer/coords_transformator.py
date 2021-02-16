@@ -13,8 +13,6 @@ class Coords_Transformator:
         self.image_width = w
 
     def get_coords_in_pixels(self):
-        print(self.center_x * self.image_width)
-        print((self.width / 2))
         return {
             'xmin': (self.center_x * self.image_width) - (self.width / 2) * self.image_width,
             'ymin': (self.center_y * self.image_height) - (self.height / 2) * self.image_height,
