@@ -3,4 +3,8 @@
 
 /tensorflow-object-detection/notebooks/.idea/
 /tensorflow-object-detection/.DS_Store
-tensorflow-object-detection/notebooks/__pycache__/
+/*/**/__pycache__
+/bounding-box-drawer/bin
+/bounding-box-drawer/include
+/bounding-box-drawer/lib
+/bounding-box-drawer/.idea
