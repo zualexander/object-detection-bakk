@@ -1,4 +1,4 @@
-ABSOLUTE_DIR_PATH=/Users/zualexander/Documents/workspace/bic/bacc-work
+ABSOLUTE_DIR_PATH=/Users/zualexander/Documents/workspace/workspace-bic/bacc-work
 DOCKER_IMAGE_NAME_YOLO=yolo9000-jupyter
 DOCKER_IMAGE_NAME_TF=tensorflow-jupyter
 VOLUME_TEST_IMAGES_DIR=/test-images

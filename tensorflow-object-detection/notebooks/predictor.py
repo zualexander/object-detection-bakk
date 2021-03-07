@@ -36,7 +36,6 @@ class Predictor:
         # Run inference
         model_fn = model.signatures['serving_default']
         output_dict = model_fn(input_tensor)
-
         # All outputs are batches tensors.
         # Convert to numpy arrays, and take index [0] to remove the batch dimension.
         # We're only interested in the first num_detections.
@@ -74,18 +73,32 @@ class Predictor:
         detection_boxes = output_dict['detection_boxes']
         detection_classes = output_dict['detection_classes']
         detection_scores = output_dict['detection_scores']
-        return list(map(
-            lambda box, pred_class, score: {
-                "class_id": pred_class,
-                "name": category_index[pred_class]['name'],
-                "confidence": score,
-                "relative_coordinates": {
-                    "center_x": box[0],
-                    "center_y": box[1],
-                    "width": box[2],
-                    "height": box[3]
-                }
-            },
-            detection_boxes,
-            detection_classes,
-            detection_scores))
+        return list(
+            map(
+                Predictor.map_to_yolo_format,
+                detection_boxes,
+                detection_classes,
+                detection_scores
+            )
+        )
+
+    @staticmethod
+    def map_to_yolo_format(box, pred_class, score):
+        data = dict()
+        coords = dict()
+        ymin = box[0]
+        xmin = box[1]
+        ymax = box[2]
+        xmax = box[3]
+
+        coords["center_x"] = (xmax - xmin) + xmin
+        coords["center_y"] = (ymax - ymin) + ymin
+        coords["width"] = (xmax - xmin)
+        coords["height"] = (ymax - ymin)
+
+        data["class_id"] = pred_class
+        data["name"] = category_index[pred_class]['name']
+        data["confidence"] = score
+        data["relative_coordinates"] = coords
+
+        return data

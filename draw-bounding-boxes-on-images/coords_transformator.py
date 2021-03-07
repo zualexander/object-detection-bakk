@@ -1,12 +1,11 @@
 import cv2
 
-
 class Coords_Transformator:
     def __init__(self, img, relative_coords):
-        self.center_x = float(relative_coords['center_x'])
-        self.center_y = float(relative_coords['center_y'])
-        self.width = float(relative_coords['width'])
-        self.height = float(relative_coords['height'])
+        self.center_x = relative_coords['center_x']
+        self.center_y = relative_coords['center_y']
+        self.width = relative_coords['width']
+        self.height = relative_coords['height']
         img = cv2.imread(img)
         h, w, _ = img.shape
         self.image_height = h
