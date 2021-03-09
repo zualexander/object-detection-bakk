@@ -1,5 +1,5 @@
 import pathlib
-import os
+
 import cv2
 
 from coords_transformator import Coords_Transformator
@@ -28,13 +28,15 @@ if __name__ == '__main__':
 
             for prediction_object in prediction["objects"]:
                 coords_transformer = Coords_Transformator(img_path, prediction_object["relative_coordinates"])
-                coords = coords_transformer.get_coords_in_pixels()
-                min_tupel = (int(coords['xmin']), int(coords['ymin']))
-                max_tupel = (int(coords['xmax']), int(coords['ymax']))
+                if float(prediction_object['confidence']) > 0.75:
+                    coords = coords_transformer.get_coords_in_pixels()
+                    min_tupel = (int(coords['xmin']), int(coords['ymin']))
+                    max_tupel = (int(coords['xmax']), int(coords['ymax']))
 
-                cv_image = cv2.rectangle(cv_image, min_tupel, max_tupel, (0, 255, 0))
-                cv_image = cv2.putText(cv_image, prediction_object["name"], min_tupel, cv2.FONT_HERSHEY_COMPLEX, 0.5,
-                                       (0, 0, 0), 1)
+                    cv_image = cv2.rectangle(cv_image, min_tupel, max_tupel, (0, 255, 0))
+                    cv_image = cv2.putText(cv_image, prediction_object["name"], min_tupel, cv2.FONT_HERSHEY_COMPLEX,
+                                           0.5,
+                                           (0, 0, 0), 1)
 
             # cv2.imshow("Show", cv_image)
             cv2.imwrite(

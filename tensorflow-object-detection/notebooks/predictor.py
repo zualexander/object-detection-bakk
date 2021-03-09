@@ -91,8 +91,8 @@ class Predictor:
         ymax = box[2]
         xmax = box[3]
 
-        coords["center_x"] = (xmax - xmin) + xmin
-        coords["center_y"] = (ymax - ymin) + ymin
+        coords["center_x"] = ((xmax - xmin) / 2) + xmin
+        coords["center_y"] = ((ymax - ymin) /2 ) + ymin
         coords["width"] = (xmax - xmin)
         coords["height"] = (ymax - ymin)
 

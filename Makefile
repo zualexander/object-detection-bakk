@@ -4,13 +4,10 @@ DOCKER_IMAGE_NAME_TF=tensorflow-jupyter
 VOLUME_TEST_IMAGES_DIR=/test-images
 
 build:
-	make build-tf && make build-yolo
+	make -j2 build-tf build-yolo
 
 run:
-	make run-tf && make run-yolo
-
-rf-y:
-	make build-yolo && make run-yolo
+	make -j2 run-tf run-yolo
 
 build-tf:
 	docker build -t $(DOCKER_IMAGE_NAME_TF) ./tensorflow-object-detection/
