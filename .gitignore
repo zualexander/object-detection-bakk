@@ -10,3 +10,7 @@
 /bounding-box-drawer/include
 /bounding-box-drawer/lib
 /bounding-box-drawer/.idea
+!bounding-box-drawer/.idea/runConfigurations/main.xml
+
+/compare-test-results/*
+!compare-test-results/.idea/runConfigurations/main.xml
