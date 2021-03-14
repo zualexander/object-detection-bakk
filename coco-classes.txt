@@ -1,0 +1,57 @@
+"person"
+"backpack"
+"handbag"
+"tie"
+"car"
+"motorcycle"
+"airplane"
+"bicycle"
+"train"
+"boat"
+traffic light
+fire hydrant
+parking meter
+"bench"
+"bird"
+"cat"
+"horse"
+"sheep"
+"elephant"
+"bear"
+"giraffe"
+"frisbee"
+"skis"
+sports ball
+"kite"
+baseball glove
+"skateboard"
+tennis racket
+"bottle"
+wine glass
+"fork"
+"knife"
+"bowl"
+"banana"
+"apple"
+"orange"
+"broccoli"
+hot dog
+"pizza"
+"cake"
+"chair"
+"couch"
+"bed"
+dining table
+"tv"
+"laptop"
+"remote"
+"keyboard"
+"microwave"
+"oven"
+"sink"
+"refrigerator"
+"book"
+"clock"
+"scissors"
+teddy bear
+"toothbrush"
