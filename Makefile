@@ -7,7 +7,7 @@ build:
 	make -j2 build-tf build-yolo
 
 run:
-	make -j2 run-tf run-yolo
+	make -j2 run-tf run-yolo && cd ./bounding-box-drawer && python3 main.py && cd ..
 
 build-tf:
 	docker build -t $(DOCKER_IMAGE_NAME_TF) ./tensorflow-object-detection/
