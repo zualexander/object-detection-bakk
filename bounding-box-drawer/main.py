@@ -26,9 +26,9 @@ if __name__ == '__main__':
             img_path = prediction["filename"]
 
             if str(result_path).endswith("yolo-9000.json"):
-                img_path = ".." + FileHandler.transform_image_path_of_yolo(img_path)
+                img_path = FileHandler.transform_image_path_of_yolo(img_path)
             else:
-                img_path = ".." + FileHandler.transform_image_path_of_tf(img_path)
+                img_path = FileHandler.transform_image_path_of_tf(img_path)
 
             cv_image = cv2.imread(img_path)
 

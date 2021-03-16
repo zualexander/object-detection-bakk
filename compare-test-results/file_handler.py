@@ -17,18 +17,17 @@ class FileHandler:
         dataframe['model'] = model_name
         dataframe['filename'] = dataframe['filename'].apply(lambda d: FileHandler.transform_image_path_of_yolo(
             d) if model_name == 'yolo-9000' else FileHandler.transform_image_path_of_tf(d))
-        print(dataframe)
         return dataframe
 
     # remove the imagepath from the yolo docker-container
     @staticmethod
     def transform_image_path_of_yolo(img_path):
-        return img_path[5:]
+        return ".." + img_path[5:]
 
     # remove the imagepath from the tf docker-container
     @staticmethod
     def transform_image_path_of_tf(img_path):
-        return img_path[3:]
+        return ".." + img_path[3:]
 
     @staticmethod
     def get_file_from_path_wo_ext(result_path):

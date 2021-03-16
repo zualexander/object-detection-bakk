@@ -11,11 +11,11 @@ class FileHandler:
 
     # remove the imagepath from the yolo docker-container
     def transform_image_path_of_yolo(img_path):
-        return img_path[5:]
+        return ".." + img_path[5:]
 
     # remove the imagepath from the tf docker-container
     def transform_image_path_of_tf(img_path):
-        return img_path[3:]
+        return ".." + img_path[3:]
 
     @staticmethod
     def add_suffix_and_sub_directory(path, subdir_path, filesuffix):
