@@ -32,3 +32,9 @@ class FileHandler:
     @staticmethod
     def get_file_from_path_wo_ext(result_path):
         return os.path.splitext(os.path.basename(result_path))[0]
+
+    @staticmethod
+    def get_file_from_path_wo_ext_until_first_dash(result_path):
+        filename_wo_ext = FileHandler.get_file_from_path_wo_ext(result_path)
+        pos = filename_wo_ext.find('-') if filename_wo_ext.find('-') > 0 else len(filename_wo_ext)
+        return filename_wo_ext[0:pos]
