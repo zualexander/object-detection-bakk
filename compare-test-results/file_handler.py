@@ -15,8 +15,7 @@ class FileHandler:
         dataframe = pd.json_normalize(data, "objects", 'filename')
 
         dataframe['model'] = model_name
-        dataframe['filename'] = dataframe['filename'].apply(lambda d: FileHandler.transform_image_path_of_yolo(
-            d) if model_name == 'yolo-9000' else FileHandler.transform_image_path_of_tf(d))
+        dataframe['filename'] = dataframe['filename'].apply(lambda d: FileHandler.transform_image_path_of_yolo(d) if model_name == 'yolo-9000' else FileHandler.transform_image_path_of_tf(d))
         return dataframe
 
     # remove the imagepath from the yolo docker-container

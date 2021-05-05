@@ -26,13 +26,13 @@ if __name__ == '__main__':
     ])
 
     # filter confidence
-    dataframe = dataframe[dataframe['confidence'] > 0.9]
+    dataframe = dataframe[dataframe['confidence'] > 0.5]
 
     # create class match column
     # dataframe['predicted'] = dataframe.apply(
     #     lambda row: FileHandler.get_file_from_path_wo_ext_until_first_dash(row['filename']) == row['gt'], axis=1)
     print(dataframe.size)
-    dataframe = dataframe.query('gt != name')
+    #dataframe = dataframe.query('gt != name')
     print(dataframe.head())
 
     # print(dataframe)
