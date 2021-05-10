@@ -9,6 +9,7 @@ p1 = Pipeline('ssd_mobilenet_v1_coco_2017_11_17')
 p2 = Pipeline('mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28')
 
 for image_path in TEST_IMAGE_PATHS:
+    print(str(image_path))
     p1.predict(image_path)
     p2.predict(image_path)
 

@@ -39,7 +39,7 @@ if __name__ == '__main__':
             cv_image = cv2.imread(img_path)
 
             for idx, prediction_object in enumerate(prediction["objects"]):
-                if (idx > 5):
+                if (idx > 2):
                     break
                 coords_transformer = Coords_Transformator(img_path, prediction_object["relative_coordinates"])
                 coords = coords_transformer.get_coords_in_pixels()
