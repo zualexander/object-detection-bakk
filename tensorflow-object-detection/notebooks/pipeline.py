@@ -11,7 +11,8 @@ class Pipeline:
         self.result = []
 
     def predict(self, img_path):
-        self.result.append(self.predictor.predict(img_path))
+        prediction_result = self.predictor.predict(img_path)
+        self.result.append(prediction_result)
 
     def persist(self):
         self.persister.append_to_json(self.result)
