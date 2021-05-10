@@ -26,7 +26,7 @@ if __name__ == '__main__':
     ])
 
     # filter confidence
-    dataframe = dataframe[dataframe['confidence'] > 0.5]
+    #dataframe = dataframe[dataframe['confidence'] > 0.5]
 
     # create class match column
     # dataframe['predicted'] = dataframe.apply(
