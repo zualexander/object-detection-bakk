@@ -30,7 +30,7 @@ if __name__ == '__main__':
                 print(min_tupel, max_tupel)
 
                 cv_image = cv2.rectangle(cv_image, min_tupel, max_tupel, (0, 255, 0))
-                cv_image = cv2.putText(cv_image, prediction_object["name"], min_tupel, cv2.FONT_HERSHEY_COMPLEX, 0.5,
+                cv_image = cv2.putText(cv_image, prediction_object["name"], max_tupel, cv2.FONT_HERSHEY_COMPLEX, 0.5,
                                        (0, 0, 0), 1)
 
             cv2.imshow("Show", cv_image)

@@ -1,0 +1,46 @@
+,class_id,name,confidence,relative_coordinates.center_x,relative_coordinates.center_y,relative_coordinates.width,relative_coordinates.height,filename,model,gt
+0,5,airplane,0.99898404,0.5288727954030037,0.49410882592201233,0.88037205,0.31096333,../test-images/images/airplane-sunset.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,airplane
+0,5,airplane,0.8645078,0.5404364764690399,0.511214554309845,0.6824074,0.34400082,../test-images/images/airplane-sunset.jpg,ssd_mobilenet_v1_coco_2017_11_17,airplane
+1,5,airplane,0.65623116,0.4628644287586212,0.5041426420211792,0.40565223,0.35161686,../test-images/images/airplane-sunset.jpg,ssd_mobilenet_v1_coco_2017_11_17,airplane
+2,4107,airplane,0.980664,0.497572,0.508798,0.672374,0.373633,../test-images/images/airplane-sunset.jpg,yolo-9000,airplane
+1,4109,bomber,0.591159,0.606096,0.50601,0.757196,0.336988,../test-images/images/airplane-sunset.jpg,yolo-9000,airplane
+0,4116,fighter,0.526501,0.554742,0.510672,0.675245,0.328207,../test-images/images/airplane-sunset.jpg,yolo-9000,airplane
+1,56,broccoli,0.99788815,0.5998920202255249,0.5078140422701836,0.55709636,0.82236415,../test-images/images/broccoli-garden.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,broccoli
+100,56,broccoli,0.9703958,0.6136670708656311,0.4772699177265167,0.5651846,0.74525803,../test-images/images/broccoli-garden.jpg,ssd_mobilenet_v1_coco_2017_11_17,broccoli
+3,152,broccoli,0.993264,0.55839,0.506224,0.547226,0.578123,../test-images/images/broccoli-garden.jpg,yolo-9000,broccoli
+4,152,broccoli,0.95957,0.511068,0.675124,0.456356,0.505494,../test-images/images/broccoli-garden.jpg,yolo-9000,broccoli
+5,152,broccoli,0.999749,0.614833,0.726998,0.218063,0.316989,../test-images/images/broccoli-iglo.png,yolo-9000,broccoli
+6,152,broccoli,0.951623,0.669269,0.561794,0.339124,0.56562,../test-images/images/broccoli-iglo.png,yolo-9000,broccoli
+7,34,vegetable,0.511729,0.500612,0.505584,0.310528,0.517607,../test-images/images/broccoli-toyjpg.jpeg,yolo-9000,broccoli
+2,18,dog,0.99989355,0.6316395103931427,0.6323592364788055,0.5718348,0.5043019,../test-images/images/dog-lying.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,dog
+200,18,dog,0.94867694,0.6455462574958801,0.6363381743431091,0.5699519,0.49959207,../test-images/images/dog-lying.jpg,ssd_mobilenet_v1_coco_2017_11_17,dog
+3,18,dog,0.999928,0.6342868506908417,0.628641739487648,0.5606352,0.4906139,../test-images/images/dog-lying_resized.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,dog
+300,18,dog,0.9366549,0.6663362979888916,0.6291608214378357,0.51292586,0.4948491,../test-images/images/dog-lying_resized.jpg,ssd_mobilenet_v1_coco_2017_11_17,dog
+4,18,dog,0.99992144,0.49000781774520874,0.6320007741451263,0.98001564,0.5158671,../test-images/images/dog-lying_resized_square.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,dog
+400,18,dog,0.82052004,0.5164781212806702,0.6301484853029251,0.94257534,0.46988544,../test-images/images/dog-lying_resized_square.jpg,ssd_mobilenet_v1_coco_2017_11_17,dog
+5,37,sports ball,0.99985075,0.5019432604312897,0.4568719416856766,0.31932694,0.58204514,../test-images/images/football.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,football
+501,38,kite,0.7210183,0.5048253089189529,0.43308717012405396,0.31466827,0.5566324,../test-images/images/football.jpg,ssd_mobilenet_v1_coco_2017_11_17,football
+500,37,sports ball,0.8706664,0.5094172954559326,0.4388018548488617,0.3326758,0.571385,../test-images/images/football.jpg,ssd_mobilenet_v1_coco_2017_11_17,football
+8,2025,soccer ball,0.915372,0.511098,0.444045,0.368292,0.562827,../test-images/images/football.jpg,yolo-9000,football
+8,48,fork,0.5055816,0.49806825816631317,0.524917408823967,0.76496536,0.8030085,../test-images/images/fork-garden.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,fork
+6,87,scissors,0.7645155,0.47788773477077484,0.5332203358411789,0.79418576,0.90872407,../test-images/images/fork-garden.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,fork
+7,87,scissors,0.52774125,0.5898050665855408,0.44356319308280945,0.64069176,0.7143048,../test-images/images/fork-garden.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,fork
+9,34,frisbee,0.995082,0.5544503182172775,0.6652083098888397,0.8000655,0.5974084,../test-images/images/frisbee-flying.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,frisbee
+10,1,person,0.9210469,0.4453968871384859,0.3233908819966018,0.835358,0.6363139,../test-images/images/frisbee-flying.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,frisbee
+11,1,person,0.67717993,0.6591441631317139,0.379717540810816,0.67774713,0.7555738,../test-images/images/frisbee-flying.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,frisbee
+12,1,person,0.6019712,0.18345861649140716,0.36801552027463913,0.3568673,0.6257595,../test-images/images/frisbee-flying.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,frisbee
+700,34,frisbee,0.9075695,0.5625154376029968,0.6627609431743622,0.7837111,0.52199066,../test-images/images/frisbee-flying.jpg,ssd_mobilenet_v1_coco_2017_11_17,frisbee
+13,18,dog,0.6086062,0.45011985301971436,0.5887341946363449,0.9002397,0.7842866,../test-images/images/sheep-black-head.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,sheep
+800,18,dog,0.93070686,0.46194949746131897,0.5956068634986877,0.9216741,0.80290055,../test-images/images/sheep-black-head.jpg,ssd_mobilenet_v1_coco_2017_11_17,sheep
+9,1054,instrumentality,0.852954,0.197278,0.215458,0.219263,0.327295,../test-images/images/sink-round-with-tap.jpeg,yolo-9000,sink
+16,81,sink,0.9510857,0.5099986959248781,0.47518303617835045,0.9800026,0.82593393,../test-images/images/sink-round.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,sink
+900,85,clock,0.8437889,0.5012460649013519,0.5026057958602905,0.97095716,0.78720427,../test-images/images/sink-round.jpg,ssd_mobilenet_v1_coco_2017_11_17,sink
+10,4493,plush,0.988037,0.518116,0.496003,0.640649,0.771825,../test-images/images/teddy bear.jpeg,yolo-9000,teddy bear
+11,1127,teddy,0.982808,0.559454,0.496168,0.656656,0.732915,../test-images/images/teddy bear.jpeg,yolo-9000,teddy bear
+18,43,tennis racket,0.99456936,0.4715411365032196,0.48730993270874023,0.9043898,0.6782533,../test-images/images/tennis racket-oldschool.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,tennis racket
+1000,43,tennis racket,0.7659446,0.491339772939682,0.4943784475326538,0.8462631,0.59556067,../test-images/images/tennis racket-oldschool.jpg,ssd_mobilenet_v1_coco_2017_11_17,tennis racket
+1001,43,tennis racket,0.63570493,0.34114691615104675,0.35487200319767,0.5410589,0.39531678,../test-images/images/tennis racket-oldschool.jpg,ssd_mobilenet_v1_coco_2017_11_17,tennis racket
+14,1833,device,0.909687,0.261227,0.333018,0.452068,0.362963,../test-images/images/tennis racket-oldschool.jpg,yolo-9000,tennis racket
+13,2175,swatter,0.528358,0.435985,0.444479,0.620031,0.442616,../test-images/images/tennis racket-oldschool.jpg,yolo-9000,tennis racket
+12,2371,tennis racket,0.723607,0.383343,0.442465,0.655586,0.433195,../test-images/images/tennis racket-oldschool.jpg,yolo-9000,tennis racket
+19,90,toothbrush,0.9928255,0.49339404702186584,0.5,0.12773424,1.0,../test-images/images/toothbrush.jpg,mask_rcnn_inception_resnet_v2_atrous_coco_2018_01_28,toothbrush
